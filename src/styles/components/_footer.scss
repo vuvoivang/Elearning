@@ -1,0 +1,129 @@
+.footer {
+  //   padding: 20px 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  .overflow {
+    //@include absoluteForBgr();
+    // z-index: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+  }
+  .container {
+    position: relative;
+
+    .logo {
+      text-align: center;
+
+      p {
+        padding-top: 20px;
+
+        font-weight: 500;
+        color: $color-pr-3;
+        margin: 0;
+        .logo-name {
+          font-family: "Brush Script MT", cursive;
+          color: #18c1f0;
+          font-size: 60px;
+          text-shadow: 8px 5px 5px #f82105c5;
+
+          // transform: scaleY(1.5); can't use for span, use for block e
+        }
+      }
+    }
+    .row {
+      .col-6 {
+        h3 {
+          word-spacing: 1px;
+          font-size: $fs-lg;
+          font-weight: 400;
+          color: white;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      }
+      .policy {
+        .content {
+          @include flex(column, center, center);
+          a {
+            color: $color-pr-2;
+            margin: 5px 0;
+            &:hover {
+              color: white;
+              transition: all 0.2s linear;
+            }
+          }
+        }
+      }
+      .link {
+        color: white;
+        .content {
+          margin-top: 10px;
+          @include flex(row, center, center);
+          a {
+            font-size: $fs-lg;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 10px;
+            &:hover {
+              color: white;
+              i {
+                transform: scale(1.2);
+                transition: all 0.25s;
+              }
+            }
+            &.facebook {
+              background-color: #3c4d82;
+            }
+            &.youtube {
+              background-color: #e52d27;
+            }
+          }
+        }
+      }
+      .contact {
+        @include flex(column, center, center);
+        p {
+          color: $color-pr-2;
+          i {
+            margin-right: 20px;
+            font-size: $fs-xl;
+            &.fa-mobile {
+              font-size: 40px;
+              width: 32px; // align text in the right
+            }
+          }
+        }
+      }
+    }
+    .line-mid {
+      width: 80%;
+      margin: 10px auto 20px;
+      height: 1px;
+      background: linear-gradient(to right, white, black, white);
+    }
+    .final {
+      padding: 10px 0 20px;
+      img {
+        width: 150px;
+        height: auto;
+      }
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      .note {
+        color: white;
+        text-align: right;
+        letter-spacing: 1px;
+        word-spacing: 3px;
+        font-size: $fs-sm;
+      }
+    }
+  }
+}

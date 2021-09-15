@@ -1,0 +1,93 @@
+.seeding {
+  padding: 40px 150px 170px;
+  .title {
+    font-family: "Roboto", sans-serif;
+    // text-align: center;
+    // margin: 40px 0;
+    margin: 20px auto;
+    text-align: center;
+    text-transform: capitalize;
+    @include text(null, $fs-xl, 100);
+    &::before {
+      content: "";
+      background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+      height: 1px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 15px;
+    }
+    &::after {
+      content: "";
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+      height: 1px;
+      width: 300px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 15px;
+    }
+  }
+  .carousel {
+    .carousel-indicators {
+      position: absolute;
+      //   bottom: 100px;
+      //   margin-top: 100px;
+      bottom: -120px;
+
+      .img-info {
+        border-radius: 50%;
+        //   z-index: -2;
+        overflow: hidden;
+        position: relative;
+        margin-left: -7px; // override each others
+        transition: all 0.2s linear;
+        // left: -15px;
+        &.active {
+          transform: scale(1.1); // scale
+          z-index: 999; // can override the element around
+          .overflow {
+            z-index: -2; // hide the dark background
+          }
+        }
+        .overflow {
+          @include absoluteForBgr();
+          background: rgba(0, 0, 0, 0.7);
+        }
+        // &:first-child {
+        //   left: 0;
+        // }
+      }
+    }
+    .carousel-inner {
+      .carousel-item {
+        //@include flex(column, center, center);
+        .content {
+          font-size: $fs-lg;
+          font-weight: 100;
+          opacity: 0.6;
+          text-align: center;
+          margin-bottom: 27px;
+          display: block;
+        }
+        .info-user {
+          font-size: $fs-md;
+          text-align: center;
+          .name {
+            color: $color-pr-2;
+          }
+        }
+      }
+    }
+    .carousel-control-prev {
+      transform: translate(-60%, -30%);
+    }
+    .carousel-control-next {
+      transform: translate(60%, -30%);
+    }
+    .prev,
+    .next {
+      color: $color-pr-2;
+      font-size: 80px;
+    }
+  }
+}

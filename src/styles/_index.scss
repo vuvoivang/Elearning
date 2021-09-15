@@ -1,0 +1,19 @@
+// helpers
+@import "./helpers/mixin";
+@import "./helpers/variable";
+// components
+@import "./common/button";
+@import "./common/common";
+@import "./common/input";
+
+// containers
+@import "./containers/Home/index";
+@import "./components/header";
+@import "./components/intro";
+@import "./components/category";
+@import "./components/top-course";
+@import "./components/infor";
+@import "./components/step-register";
+@import "./components/seeding";
+@import "./components/footer";
+@import "./components/spinner";

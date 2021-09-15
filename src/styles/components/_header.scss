@@ -1,0 +1,163 @@
+.header {
+  //overflow: hidden;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  //left: 0;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  font-family: $font-title !important;
+  box-shadow: 0 0 10px 0 #0000005e;
+  &.header-hidden {
+    transform: translateY(-100%);
+  }
+  &.header-home {
+    background-color: transparent;
+    .logo {
+      p {
+        color: $color-pr-3;
+      }
+    }
+    .navbar {
+      ul {
+        li {
+          .nav-link {
+            color: white !important;
+          }
+        }
+        li.active {
+          .nav-link {
+            color: yellow !important;
+          }
+        }
+      }
+    }
+  }
+  .container {
+    width: 100%;
+    @include flex(row, space-between);
+  }
+  .logo {
+    p {
+      font-size: $fs-lg;
+      color: $color-pr-1;
+      margin: 0 !important;
+      // margin-left: 10px;
+      .logo-name {
+        font-family: "Brush Script MT", cursive;
+        color: #18c1f0;
+        font-size: 60px;
+        text-shadow: 8px 5px 5px #f82105c5;
+
+        // transform: scaleY(1.5); can't use for span, use for block e
+      }
+    }
+  }
+  .navbar {
+    padding: 0;
+    ul {
+      li {
+        .nav-link {
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: $fw-bold-2;
+          &:hover {
+            color: $color-pr-3 !important;
+            transition: all 0.1s linear;
+          }
+        }
+      }
+      li.active {
+        .nav-link {
+          color: rgb(2, 216, 84) !important;
+        }
+      }
+    }
+  }
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    // position: relative;
+    .cart {
+      position: relative;
+      // display: inline-block;
+      width: 40px;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      display: flex;
+      // padding: 5px;
+      border-radius: 100%;
+      margin-right: 30px;
+      .cart-icon {
+        color: white;
+        font-size: $fs-sm;
+        position: relative;
+        // top: 4px;
+        left: -2px;
+      }
+      .amount {
+        @include text(white, 15px, $fw-thin);
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        // line-height: 17px;
+        text-align: center;
+        line-height: 20px;
+        position: absolute;
+        top: -4px;
+        right: -2px;
+      }
+      background-color: rgba(0, 0, 0, 0.3);
+
+      .info-cart {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        //display: none;
+        //position: relative;
+        //top: 100px;
+        width: 350px;
+        height: auto;
+        background-color: white;
+        color: $color-pr-1;
+        top: 100px;
+        // left: 30px;
+        // left: -30px;
+        border: 2px solid red;
+        text-align: center;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+        &::before {
+          content: "";
+          width: 350px;
+          height: 5px;
+          background-color: $color-se-1;
+          position: absolute;
+          top: -5px;
+          left: -2px;
+        }
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+        .info-cart {
+          opacity: 1;
+          visibility: visible;
+          display: block;
+          transform: translateY(-50px);
+          transition: all 0.5s linear;
+        }
+      }
+    }
+    .account {
+      .btn-signin {
+        @include button(white, $color-pr-2, white, $color-pr-1);
+        margin-right: 10px;
+      }
+      .btn-signup {
+        @include button(white, rgba(0, 0, 0, 0.6), white, rgba(0, 0, 0, 0.9));
+      }
+    }
+  }
+}
